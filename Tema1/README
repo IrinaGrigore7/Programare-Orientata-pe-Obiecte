@@ -1,0 +1,52 @@
+GRIGORE IRINA-DOMNICA 325CB
+
+Pentru implemantarea acestei teme am ales sa folosesc urmatoarele clase:
+
+-> Clasa Person este folosita pentru a retine toate datele despre fiecare persoana.
+De asemnea, tot aici am definit getters and setters pentru fiecare dintre detaliile
+unei persoane.
+
+-> Clasa abstracta Passenger contine un vector de persoane, campul id care reprezinta id-ul
+unei entitati, precum si definitiile mai multor metode care sunt implemetate in 
+clasele copil.
+
+-> Clasa Single extinde clasa parinte Passenger. In aceasta clasa sunt implementate 
+metodele definite in Passenger, si anume metode de calculare a prioritatii obtinute
+de aceasta entitate.
+
+-> Clasa Family extinde si ea clasa Passenger. La fel ca si clasa Single, ea implementeaza 
+metodele de calacul al prioritatii.
+
+-> Clasa Group, la fel ca si celelate doua clase, Single si Family, extinde clasa
+Passenger, in aceasta fiind implementate metodele de claculare a prioritatii unui grup.
+
+-> Clasa AddPerson este utilizata pentru a stoca toate persoanele intr-un hashmap.
+La fiecare cheie se gaseste o lista cu persoane care au acelasi id.
+
+-> Clasa PriorityQueue are ca scop implementarea unei cozi de prioritati bazata pe 
+maxheap. Metoda embark() elimina maximul din arbore, ultimul nod devine root, apoi 
+heap-ul este sortat din nou, metodele parent(), leftChild() si rightChild() sunt 
+utilizate in program pentru a afla pozitia parintelui, copilului stanga, respectiv
+copilului dreapta al unui nod trimis ca parametru. Metoda insert() adauga in arbore
+o anumita entitate. Daca in urma inserarii, arborele nu este ordonat, se face aranjarea
+acestuia. Metoda swap() este utilizata pentru ordonarea heap-ului, facand interschimbarea
+intre doua noduri. Metoda maxHeapify() se apleaza in momentul in care se face eliminarea
+din arbore si se doreste reordonarea lui. Metodele print(), precum si list() sunt
+utilizate pentru a parcurge arborele in preordine, respectiv pentru a scrie in fisier.
+Metoda delete() are ca intrebuintare stergerea unei intregi entitati(Single, Group
+sau Family) din arbore, precum si stergerea doar unei singure persoane dintr-o anumita
+entitate.
+
+-> Clasa Test contine main-ul. In aceasta metoda se fac urmatoarele: instantierea mai multor 
+obiecte, citirea din fisier si apelul functiilor din cerinta temei. Prima data adaug toti
+pasagerii intr-un hashmap, alaturi de toate informatiile legate de acestia. Cand 
+ajung la apelurile metodelor, verific ce metoda se doreste a fi apelata si intru pe ramura
+corespunzatoare ei. La apelul metodei insert(), intai extrag din hashmap lista continuta la 
+respectivul id, o transform in vector, apoi creez o entitate pe care o trimit ca si parametru 
+metodei insert(). Atunci cand este apelata metoda delete() verific daca se doreste 
+stergerea unei intregi entitati sau doar a unei singure persoane dintr-o anumita entitate.
+Asemeni metodei insert(), extrag list din hashmap, o transform in vector si creez o entitate.
+Daca este nevoie de stregerea unei singure persoane, o caut in vecorul de persoane anterior creat,
+iar apoi ii setez campul remove pe true, ca atunci cand intra in metoda sa stie ce trebuie sters
+din acea entitate. De asemenea mai sunt apelate tot aici metodele embark() si list() care
+nu primesc niciun fel de parametru.
