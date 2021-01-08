@@ -1,0 +1,33 @@
+GRIGORE IRINA-DOMNICA
+325CB
+
+Tema2 - Termostat inteligent
+La implementarea acestei teme am ales sa stochez datele in felul urmator:
+intr-un array de tip RoomStructure(clasa seteaza campurile cu informatiile aferente
+unei camere) retin camerele; pentru fiecare camera creez un HashMap in care ca si
+chei am 24 de buckets de o ora, iar ca si valoare am decis sa pun TimeInterval 
+care consta in doua TreeSet-uri, unul care stocheaza temperaturile introduse intr-un
+anumit interval, iar altul care pastreaza valorile umiditatii, acestea 
+mentinandu-se sortate de-a lungul inserarii.
+
+->Clasa List contine metoda listMethod care se afiseaza temperaturile cuprinse
+intr-un anumit interval de timp.
+
+->Clasa Observe contine metoda observeMethod care parcurge camerele, calculeaza cheia 
+pentru a adauga temperatura la cheia respectiva.
+
+->Clasa ObserveH este realizeaza aceleasi lucruri ca si clasa Observe, doar ca in loc
+sa adauge temepraturi, adauga umiditati.
+
+->Clasa Trigger contine metoda triggerMethod care intai verifica pentru ce trebuie 
+facuta media ponderata. In cazul in care umiditatea are aceesi valoare cu care a fost
+setata in main inseamna ca trebuie facuta media ponderata dintre temperaturi si suprafetele
+camerelor si apoi verifica daca este necesara pornirea centralei, iar in caz contrar trebuie
+facuta media ponderata dintre umiditati si suprafetele camerelor si, de asemenea, se verifica
+daca este nevoie ca centrala sa porneasca.
+
+->Clasa Test contine metoda main in care se face citire din fisier, seteaza variabilele,
+adauga camere in locuinta si apeleaza metodele corespunzatoare.
+
+
+  
