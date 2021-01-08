@@ -1,0 +1,25 @@
+GRIGORE IRINA-DOMNICA
+325CB
+
+Tema3 POO - Competitii sportive
+
+In cadrul acestei teme am realizat doar cerinta 1. Pentru aceasta, pe langa clasele
+specificate in enuntul temei(Team, FootballTeam, BasketballTeam, HandballTeam, Player),
+m-am folosit si de urmatoarele clase:
+->TeamFactory - aceasta clasa contine o metoda care creaza instante pentru echipele
+ce urmeaza sa fie inscrise in competitie, in functie de tipul lor. Este utilizat
+design pattern-ul Factory.
+
+->TeamRegistration - aceasta clasa contine design pattern-ul Singleton ce este 
+utilizat pentru a crea o singura instanta a acestei clase. De asemenea, contine si o 
+metoda numita registration in cadrul careia se face citirea in fisier si inscrierea 
+propriu-zisa a echipelor, creandu-se o lista de echipe care este returnata de aceasta
+metoda.
+
+->Teams - contine un ArrayList de echipe.
+
+->Test - contine metoda main in care sunt preluate argumentele primite in linia de comanda.
+Daca comanda este "inscriere", creez un obiect de tipul TeamRegistration si apelez metoda
+de inscriere in competitie, intorcandu-mi lista de echipe create. De asemenea, dupa formarea
+echipelor, fac afisarea acestora in fisier. 
+
